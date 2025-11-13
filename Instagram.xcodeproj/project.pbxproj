@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9CED1BB12EC5CC030028D893 /* InstagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BA02EC5CC030028D893 /* InstagramApp.swift */; };
-		9CED1BB22EC5CC030028D893 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BAB2EC5CC030028D893 /* ContentView.swift */; };
 		9CED1BB32EC5CC030028D893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CED1BA22EC5CC030028D893 /* Assets.xcassets */; };
+		9CED1BB72EC5CCE40028D893 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BB62EC5CCE40028D893 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9CED1B792EC5C4AE0028D893 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CED1BA02EC5CC030028D893 /* InstagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramApp.swift; sourceTree = "<group>"; };
 		9CED1BA22EC5CC030028D893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9CED1BAB2EC5CC030028D893 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9CED1BB62EC5CCE40028D893 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,6 @@
 				9CED1BAA2EC5CC030028D893 /* Search */,
 				9CED1BB42EC5CC3D0028D893 /* TabBar */,
 				9CED1BB52EC5CC4A0028D893 /* UploadPosts */,
-				9CED1BAB2EC5CC030028D893 /* ContentView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 		9CED1BB42EC5CC3D0028D893 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				9CED1BB62EC5CCE40028D893 /* MainTabView.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CED1BB12EC5CC030028D893 /* InstagramApp.swift in Sources */,
-				9CED1BB22EC5CC030028D893 /* ContentView.swift in Sources */,
+				9CED1BB72EC5CCE40028D893 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
