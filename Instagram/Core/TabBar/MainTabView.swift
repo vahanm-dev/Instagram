@@ -36,7 +36,7 @@ struct MainTabView: View {
             
             Tab("", systemImage: "person") {
                 NavigationStack {
-                    Text("Profile")
+                    ProfileView()
                 }
             }
         }

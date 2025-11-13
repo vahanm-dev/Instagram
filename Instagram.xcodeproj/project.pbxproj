@@ -10,6 +10,8 @@
 		9CED1BB12EC5CC030028D893 /* InstagramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BA02EC5CC030028D893 /* InstagramApp.swift */; };
 		9CED1BB32EC5CC030028D893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CED1BA22EC5CC030028D893 /* Assets.xcassets */; };
 		9CED1BB72EC5CCE40028D893 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BB62EC5CCE40028D893 /* MainTabView.swift */; };
+		9CED1BB92EC5CEF20028D893 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BB82EC5CEF20028D893 /* ProfileView.swift */; };
+		9CED1BBC2EC5D4B80028D893 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED1BBB2EC5D4B80028D893 /* UserStatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +19,8 @@
 		9CED1BA02EC5CC030028D893 /* InstagramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramApp.swift; sourceTree = "<group>"; };
 		9CED1BA22EC5CC030028D893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CED1BB62EC5CCE40028D893 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		9CED1BB82EC5CEF20028D893 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9CED1BBB2EC5D4B80028D893 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		9CED1BA82EC5CC030028D893 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9CED1BB82EC5CEF20028D893 /* ProfileView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				9CED1BA62EC5CC030028D893 /* Authentication */,
+				9CED1BBA2EC5D4890028D893 /* Components */,
 				9CED1BA72EC5CC030028D893 /* Feed */,
 				9CED1BA82EC5CC030028D893 /* Profile */,
 				9CED1BA92EC5CC030028D893 /* Root */,
@@ -174,6 +180,14 @@
 			children = (
 			);
 			path = UploadPosts;
+			sourceTree = "<group>";
+		};
+		9CED1BBA2EC5D4890028D893 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9CED1BBB2EC5D4B80028D893 /* UserStatView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CED1BB12EC5CC030028D893 /* InstagramApp.swift in Sources */,
+				9CED1BB92EC5CEF20028D893 /* ProfileView.swift in Sources */,
 				9CED1BB72EC5CCE40028D893 /* MainTabView.swift in Sources */,
+				9CED1BBC2EC5D4B80028D893 /* UserStatView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
