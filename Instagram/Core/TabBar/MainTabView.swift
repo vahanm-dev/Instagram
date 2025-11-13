@@ -12,7 +12,7 @@ struct MainTabView: View {
         TabView {
             Tab("", systemImage: "house") {
                 NavigationStack {
-                    Text("Feed")
+                    FeedView()
                 }
             }
             
