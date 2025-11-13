@@ -18,7 +18,7 @@ struct MainTabView: View {
             
             Tab("", systemImage: "magnifyingglass") {
                 NavigationStack {
-                    Text("Search")
+                    SearchView()
                 }
             }
             
