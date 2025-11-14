@@ -36,7 +36,7 @@ struct MainTabView: View {
             
             Tab("", systemImage: "person") {
                 NavigationStack {
-                    ProfileView()
+                    CurrentUserProfileView(user: User.mockUsers[0])
                 }
             }
         }
