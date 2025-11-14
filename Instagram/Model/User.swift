@@ -1,0 +1,46 @@
+//
+//  User.swift
+//  Instagram
+//
+//  Created by Vahan Muradyan on 14.11.25.
+//
+
+import Foundation
+
+struct User: Identifiable, Codable {
+    let id: String
+    var username: String
+    var profileImageUrl: String?
+    var fullname: String?
+    var bio: String?
+    let email: String
+}
+
+extension User {
+    static var mockUsers: [User] = [
+        .init(id: UUID().uuidString,
+              username: "batman",
+              profileImageUrl: "batman-2",
+              fullname: "Bruce Wayne",
+              bio: "Gotham's Dark Night",
+              email: "betman@gmail.com"),
+        .init(id: UUID().uuidString,
+              username: "venum",
+              profileImageUrl: "venum",
+              fullname: "Eddie Brock",
+              bio: "venum",
+              email: "venum@gmail.com"),
+        .init(id: UUID().uuidString,
+              username: "ironman",
+              profileImageUrl: "ironman",
+              fullname: "Tony Stark",
+              bio: "Playboy & Billionaire",
+              email: "ironman@gmail.com"),
+        .init(id: UUID().uuidString,
+              username: "spidermane",
+              profileImageUrl: "spidermane",
+              fullname: "Peter Parker",
+              bio: "spidermane",
+              email: "plackpanther@gmail.com")
+    ]
+}
