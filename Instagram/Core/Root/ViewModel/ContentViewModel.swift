@@ -1,0 +1,18 @@
+//
+//  ContentViewModel.swift
+//  Instagram
+//
+//  Created by Vahan Muradyan on 17.11.25.
+//
+
+import Foundation
+import FirebaseAuth
+
+@Observable
+final class ContentViewModel {
+    var userSession: FirebaseAuth.User? {
+        service.userSession
+    }
+    
+    private let service = AuthService.shared
+}
