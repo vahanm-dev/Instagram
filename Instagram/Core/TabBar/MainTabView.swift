@@ -8,37 +8,62 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @State private var selectedIndex = 0
+    
     var body: some View {
-        TabView {
-            Tab("", systemImage: "house") {
-                NavigationStack {
-                    FeedView()
-                }
+        TabView(selection: $selectedIndex) {
+            NavigationStack {
+                FeedView()
+                    .onAppear {
+                        selectedIndex = 0
+                    }
             }
+            .tabItem {
+                Image(systemName: "house")
+            }
+            .tag(0)
             
-            Tab("", systemImage: "magnifyingglass") {
-                NavigationStack {
-                    SearchView()
-                }
+            NavigationStack {
+                SearchView()
+                    .onAppear {
+                        selectedIndex = 1
+                    }
             }
+            .tabItem {
+                Image(systemName: "magnifyingglass")
+            }
+            .tag(1)
             
-            Tab("", systemImage: "plus.square") {
-                NavigationStack {
-                    Text("Upload Posts")
+            UploadPostView(tabIndex: $selectedIndex)
+                .onAppear {
+                    selectedIndex = 2
                 }
-            }
+                .tabItem {
+                    Image(systemName: "plus.square")
+                }
+                .tag(2)
             
-            Tab("", systemImage: "heart") {
-                NavigationStack {
-                    Text("Notifications")
-                }
+            NavigationStack {
+                Text("Notifications")
+                    .onAppear {
+                        selectedIndex = 3
+                    }
             }
+            .tabItem {
+                Image(systemName: "heart")
+            }
+            .tag(3)
             
-            Tab("", systemImage: "person") {
-                NavigationStack {
-                    CurrentUserProfileView(user: User.mockUsers[0])
-                }
+            NavigationStack {
+                CurrentUserProfileView(user: User.mockUsers[0])
+                    .onAppear {
+                        selectedIndex = 4
+                    }
             }
+            .tabItem {
+                Image(systemName: "person")
+            }
+            .tag(4)
         }
         .tint(.black)
         .tabBarMinimizeBehavior(.onScrollDown)
