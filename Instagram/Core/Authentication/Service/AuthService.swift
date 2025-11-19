@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 
 @Observable
 final class AuthService {
@@ -32,6 +33,7 @@ final class AuthService {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             userSession = result.user
+            await uploadUserData(userId: result.user.uid, username: username, email: email)
         } catch {
             print("DEBUG: Create user failed with error: \(error)")
         }
@@ -44,5 +46,12 @@ final class AuthService {
     func signOut() {
         try? Auth.auth().signOut()
         userSession = nil
+    }
+    
+    private func uploadUserData(userId: String, username: String, email: String) async {
+        let user = User(id: userId, username: username, email: email)
+        guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
+        
+        try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
     }
 }
