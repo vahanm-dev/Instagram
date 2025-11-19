@@ -30,6 +30,7 @@
 		9C9AFAAC2ECDF91700C82507 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFAAB2ECDF91700C82507 /* ImageUploader.swift */; };
 		9C9AFAAF2ECDFCA000C82507 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9C9AFAAE2ECDFCA000C82507 /* Kingfisher */; };
 		9C9AFAB12ECDFD2F00C82507 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFAB02ECDFD2F00C82507 /* CircularProfileImageView.swift */; };
+		9C9AFAB92ECE04D200C82507 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9AFAB82ECE04D200C82507 /* FeedViewModel.swift */; };
 		9CE078D12EC784DD00BECA3E /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE078D02EC784DD00BECA3E /* TextFieldModifier.swift */; };
 		9CE078D32EC785AF00BECA3E /* CreateUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE078D22EC785AF00BECA3E /* CreateUsernameView.swift */; };
 		9CE078D52EC787F400BECA3E /* CreatePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE078D42EC787F400BECA3E /* CreatePasswordView.swift */; };
@@ -68,6 +69,7 @@
 		9C9AFAA92ECDB57100C82507 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		9C9AFAAB2ECDF91700C82507 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		9C9AFAB02ECDFD2F00C82507 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		9C9AFAB82ECE04D200C82507 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		9CE078D02EC784DD00BECA3E /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
 		9CE078D22EC785AF00BECA3E /* CreateUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameView.swift; sourceTree = "<group>"; };
 		9CE078D42EC787F400BECA3E /* CreatePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePasswordView.swift; sourceTree = "<group>"; };
@@ -199,6 +201,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9C9AFAB62ECE04BB00C82507 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C9AFAB82ECE04D200C82507 /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9C9AFAB72ECE04C300C82507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CED1BBD2EC5E4220028D893 /* FeedView.swift */,
+				9CED1BBF2EC5E4300028D893 /* FeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9CED1B702EC5C4AE0028D893 = {
 			isa = PBXGroup;
 			children = (
@@ -262,8 +281,8 @@
 		9CED1BA72EC5CC030028D893 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				9CED1BBD2EC5E4220028D893 /* FeedView.swift */,
-				9CED1BBF2EC5E4300028D893 /* FeedCell.swift */,
+				9C9AFAB72ECE04C300C82507 /* View */,
+				9C9AFAB62ECE04BB00C82507 /* ViewModel */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -475,6 +494,7 @@
 				9C5B4F3C2EC9C08500C7DA95 /* UploadPostView.swift in Sources */,
 				9CED1BB72EC5CCE40028D893 /* MainTabView.swift in Sources */,
 				9C9AFAA42ECDB20500C82507 /* EditProfileView.swift in Sources */,
+				9C9AFAB92ECE04D200C82507 /* FeedViewModel.swift in Sources */,
 				9CED1BBC2EC5D4B80028D893 /* UserStatView.swift in Sources */,
 				9CE078D12EC784DD00BECA3E /* TextFieldModifier.swift in Sources */,
 				9C5B4F362EC9B72400C7DA95 /* Post.swift in Sources */,
