@@ -25,13 +25,13 @@ extension Post {
               likes: 123,
               imageUrl: "batman-2",
               timestamp: Date(),
-              user: User.mockUsers[0]),
+              user: User.MOCK_USERS[0]),
         .init(id: UUID().uuidString,
               ownerUid: UUID().uuidString,
               caption: "Wakanda Forever",
               likes: 104,
               imageUrl: "black-panther-1",
               timestamp: Date(),
-              user: User.mockUsers[1])
+              user: User.MOCK_USERS[1])
     ]
 }

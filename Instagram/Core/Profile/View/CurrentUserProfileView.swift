@@ -38,5 +38,5 @@ struct CurrentUserProfileView: View {
 }
 
 #Preview {
-    CurrentUserProfileView(user: User.mockUsers[0])
+    CurrentUserProfileView(user: User.MOCK_USERS[0])
 }

@@ -16,11 +16,7 @@ struct ProfileHeaderView: View {
         VStack(spacing: 10) {
             // pic and stats
             HStack {
-                Image(user.profileImageUrl ?? "")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
+                CircularProfileImageView(user: user, size: .large)
                 
                 Spacer()
                 
@@ -77,5 +73,5 @@ struct ProfileHeaderView: View {
 }
 
 #Preview {
-    ProfileHeaderView(user: User.mockUsers[0])
+    ProfileHeaderView(user: User.MOCK_USERS[0])
 }

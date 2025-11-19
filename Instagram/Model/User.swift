@@ -28,28 +28,28 @@ extension User {
 }
 
 extension User {
-    static var mockUsers: [User] = [
+    static var MOCK_USERS: [User] = [
         .init(id: UUID().uuidString,
               username: "batman",
-              profileImageUrl: "batman-2",
+              profileImageUrl: nil,
               fullname: "Bruce Wayne",
               bio: "Gotham's Dark Night",
               email: "betman@gmail.com"),
         .init(id: UUID().uuidString,
               username: "venum",
-              profileImageUrl: "venum",
+              profileImageUrl: nil,
               fullname: "Eddie Brock",
               bio: "venum",
               email: "venum@gmail.com"),
         .init(id: UUID().uuidString,
               username: "ironman",
-              profileImageUrl: "ironman",
+              profileImageUrl: nil,
               fullname: "Tony Stark",
               bio: "Playboy & Billionaire",
               email: "ironman@gmail.com"),
         .init(id: UUID().uuidString,
               username: "spidermane",
-              profileImageUrl: "spidermane",
+              profileImageUrl: nil,
               fullname: "Peter Parker",
               bio: "spidermane",
               email: "plackpanther@gmail.com")

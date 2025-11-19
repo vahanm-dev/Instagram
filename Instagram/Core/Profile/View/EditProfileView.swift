@@ -35,6 +35,7 @@ struct EditProfileView: View {
                     
                     Button("Done") {
                         Task { try await viewModel.updateUserData() }
+                        dismiss()
                     }
                     .font(.subheadline)
                     .fontWeight(.bold)
@@ -54,12 +55,8 @@ struct EditProfileView: View {
                             .clipShape(Circle())
                             .frame(width: 80, height: 80)
                     } else {
-                        Image(systemName: "person")
-                            .resizable()
-                            .foregroundStyle(.white)
-                            .background(.gray)
-                            .clipShape(Circle())
-                            .frame(width: 80, height: 80)
+                        CircularProfileImageView(user: viewModel.user,
+                                                 size: .large)
                     }
                     
                     Text("Edit profile picture")
@@ -87,5 +84,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView(user: User.mockUsers[0])
+    EditProfileView(user: User.MOCK_USERS[0])
 }

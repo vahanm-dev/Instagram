@@ -25,6 +25,14 @@ final class EditProfileViewModel {
     
     init(user: User) {
         self.user = user
+        
+        if let fullname = user.fullname {
+            self.fullname = fullname
+        }
+        
+        if let bio = user.bio {
+            self.bio = bio
+        }
     }
     
     func loadImage(from item: PhotosPickerItem?) async {

@@ -18,20 +18,8 @@ struct SearchView: View {
                     ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             HStack {
-                                if let profileImageUrl = user.profileImageUrl {
-                                    Image(profileImageUrl)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(Circle())
-                                } else {
-                                    Image(systemName: "person.circle")
-                                        .resizable()
-                                        .scaledToFill()
-                                        .foregroundStyle(.gray)
-                                        .frame(width: 40, height: 40)
-                                        .clipShape(Circle())
-                                }
+                                CircularProfileImageView(user: user,
+                                                         size: .small)
                                 
                                 VStack(alignment: .leading) {
                                     Text(user.username)
