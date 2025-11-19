@@ -48,16 +48,22 @@ struct ProfileHeaderView: View {
             .padding(.horizontal)
             
             // action button
-            Button("Edit Profile") {
-                //
+            Button(user.isCurrentUser ? "Edit Profile" : "Follow") {
+                if user.isCurrentUser {
+                    // edit profile
+                } else {
+                    // follow
+                }
             }
             .font(.subheadline)
             .fontWeight(.semibold)
             .frame(width: 360, height: 32)
-            .foregroundStyle(.black)
+            .background(user.isCurrentUser ? .white : Color(.systemBlue))
+            .foregroundStyle(user.isCurrentUser ? .black : .white)
+            .clipShape(RoundedRectangle(cornerRadius: 6))
             .overlay {
                 RoundedRectangle(cornerRadius: 6)
-                    .stroke(.gray, lineWidth: 1)
+                    .stroke(user.isCurrentUser ? .gray : .clear, lineWidth: 1)
             }
             
             Divider()
