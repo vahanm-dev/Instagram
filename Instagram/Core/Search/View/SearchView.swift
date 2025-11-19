@@ -19,7 +19,7 @@ struct SearchView: View {
                         NavigationLink(value: user) {
                             HStack {
                                 CircularProfileImageView(user: user,
-                                                         size: .small)
+                                                         size: .eSmall)
                                 
                                 VStack(alignment: .leading) {
                                     Text(user.username)
