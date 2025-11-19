@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct CompleteSignUpView: View {
+    @Environment(RegistrationViewModel.self) private var viewModel
+    
     var body: some View {
         VStack(spacing: 12) {
             Spacer()
             
-            Text("Welcome to Instagram, vahan")
+            Text("Welcome to Instagram, \(viewModel.username)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
@@ -24,7 +26,9 @@ struct CompleteSignUpView: View {
                 .padding(.horizontal, 24)
             
             Button {
-                
+                Task {
+                    try await viewModel.createUser()
+                }
             } label: {
                 Text("Complete Sign Up")
                     .font(.subheadline)
@@ -43,4 +47,5 @@ struct CompleteSignUpView: View {
 
 #Preview {
     CompleteSignUpView()
+        .environment(RegistrationViewModel())
 }
