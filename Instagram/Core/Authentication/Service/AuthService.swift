@@ -20,13 +20,18 @@ final class AuthService {
     }
     
     func login(email: String, password: String) async throws {
-        
+        do {
+            let result = try await Auth.auth().signIn(withEmail: email, password: password)
+            userSession = result.user
+        } catch {
+            print("DEBUG: Log in user failed with error: \(error)")
+        }
     }
     
     func createUser(email: String, password: String, username: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            self.userSession = result.user
+            userSession = result.user
         } catch {
             print("DEBUG: Create user failed with error: \(error)")
         }
@@ -37,6 +42,7 @@ final class AuthService {
     }
     
     func signOut() {
-        
+        try? Auth.auth().signOut()
+        userSession = nil
     }
 }
