@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileHeaderView: View {
     let user: User
     
+    @State private var showEditProfile = false
+    
     var body: some View {
         VStack(spacing: 10) {
             // pic and stats
@@ -50,7 +52,7 @@ struct ProfileHeaderView: View {
             // action button
             Button(user.isCurrentUser ? "Edit Profile" : "Follow") {
                 if user.isCurrentUser {
-                    // edit profile
+                    showEditProfile = true
                 } else {
                     // follow
                 }
@@ -67,6 +69,9 @@ struct ProfileHeaderView: View {
             }
             
             Divider()
+        }
+        .fullScreenCover(isPresented: $showEditProfile) {
+            Text("Edit Profile View")
         }
     }
 }
