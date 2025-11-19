@@ -13,11 +13,11 @@ struct ContentView: View {
     
     var body: some View {
         Group {
-            if let _ = contentViewModel.userSession {
-                MainTabView()
-            } else {
+            if contentViewModel.userSession == nil {
                 LoginView()
                     .environment(registrationViewModel)
+            } else if let currentUser = contentViewModel.currentUser {
+                MainTabView(user: currentUser)
             }
         }
     }

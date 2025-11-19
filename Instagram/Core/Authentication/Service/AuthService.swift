@@ -14,16 +14,20 @@ final class AuthService {
     
     static let shared = AuthService()
     
+    var currentUser: User?
     var userSession: FirebaseAuth.User?
     
     init() {
         userSession = Auth.auth().currentUser
+        
+        Task { try await loadUserData() }
     }
     
     func login(email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             userSession = result.user
+            try await loadUserData()
         } catch {
             print("DEBUG: Log in user failed with error: \(error)")
         }
@@ -40,16 +44,20 @@ final class AuthService {
     }
     
     func loadUserData() async throws {
-        
+        guard let currentUid = userSession?.uid else { return }
+        let snapshot = try await Firestore.firestore().collection("users").document(currentUid).getDocument()
+        currentUser = try? snapshot.data(as: User.self)
     }
     
     func signOut() {
         try? Auth.auth().signOut()
         userSession = nil
+        currentUser = nil
     }
     
     private func uploadUserData(userId: String, username: String, email: String) async {
         let user = User(id: userId, username: username, email: email)
+        currentUser = user
         guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
         
         try? await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)

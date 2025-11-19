@@ -10,9 +10,10 @@ import FirebaseAuth
 
 @Observable
 final class ContentViewModel {
-    var userSession: FirebaseAuth.User? {
-        service.userSession
-    }
+    var userSession: FirebaseAuth.User? { service.userSession }
+    var currentUser: User? { service.currentUser }
     
     private let service = AuthService.shared
+    
+//    let service = AuthService.shared
 }
